@@ -23,7 +23,7 @@ const Form = () => {
     e.preventDefault();
     try {
       const toastLoading = toast.loading("Submitting...");
-      await axios.post(`{${SERVER_URL}/api/form}`, formData);
+      await axios.post(`${SERVER_URL}/api/form`, formData);
       console.log(formData);
       toast.dismiss(toastLoading);
       toast.success("Form submitted successfully!", {
