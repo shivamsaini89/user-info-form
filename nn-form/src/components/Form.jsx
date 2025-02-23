@@ -2,7 +2,7 @@ import { useState } from "react";
 import toast from "react-hot-toast";
 import axios from "axios";
 
-const VITE_SERVER_URL = import.meta.env.SERVER_URL;
+const VITE_SERVER_URL = import.meta.env.VITE_SERVER_URL;
 const Form = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -19,6 +19,7 @@ const Form = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+  console.log(`${VITE_SERVER_URL}/api/form`)
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
