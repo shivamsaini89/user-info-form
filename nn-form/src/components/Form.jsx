@@ -2,7 +2,7 @@ import { useState } from "react";
 import toast from "react-hot-toast";
 import axios from "axios";
 
-const SERVER_URL = import.meta.env.SERVER_URL;
+const VITE_SERVER_URL = import.meta.env.SERVER_URL;
 const Form = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -23,7 +23,7 @@ const Form = () => {
     e.preventDefault();
     try {
       const toastLoading = toast.loading("Submitting...");
-      await axios.post(`${SERVER_URL}/api/form`, formData);
+      await axios.post(`${VITE_SERVER_URL}/api/form`, formData);
       console.log(formData);
       toast.dismiss(toastLoading);
       toast.success("Form submitted successfully!", {
